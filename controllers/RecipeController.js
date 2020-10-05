@@ -1,9 +1,18 @@
-const express = require('express');
-const { get } = require('../routes');
 
+const service = require('../services/RecipeServices')
 module.exports={
-    async get(req,res)
+    async getRecipes(req,res)
     {
-        return res.status(200).json({'success':true, "body":{"message":"testing the basic project structure"}})
+        try{
+            const ingredients= req.query.i;
+            const recipes = await service.getRecipes(ingredients)
+            return res.status(200).json(recipes)
+        
+        }
+        catch(error)
+        {
+            return res.status(411).json(error.message)
+        }
+    
     }
 }

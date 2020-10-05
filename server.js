@@ -1,10 +1,8 @@
-require('dotenv').config({ path:__dirname+'/conf/.env'})
+require('dotenv').config()
 const express = require('express')
 const app = express()
 const cors = require('cors')
 const {serverConf}=require("./conf/Configuration")
-
-
 app.use(cors())
 app.use(express.json())
 
