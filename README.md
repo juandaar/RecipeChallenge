@@ -20,11 +20,9 @@ The Recipe challenge management an integration with two externals APIS: [Recipe 
 APP_PORT= Port number
 PUPPY_URL= http://www.recipepuppy.com/api/
 
-GIPHY_API_TOKEN=RDsg9MYu12IDx3HJiBTZAvSQc4qeeUYO*
+GIPHY_API_TOKEN=TOKEN *
 ```
-
 * you can create your Giphy API Key [here](https://developers.giphy.com/docs/api#quick-start-guide)
-
 ### standalone 
 Recipe Challenge was implemented on npm version **6.14.6** and node version **v12.18.4**.
 
@@ -46,7 +44,7 @@ npm start
 ```
 or
 ```
-npm start-dev
+npm run start-dev
 ```
 
 ### Docker
@@ -60,38 +58,56 @@ cd RecipeChallenge or cd ABSOLUTE_ROUTE
 ```
 3. Create the image
 ```
- docker run recipe_challenge:latest 
+ docker build -t image_name .
 ```
-4. Run the image
+4. Show images
 ```
-docker run -p 3000:3000 recipe_challenge:latest
+docker image lists
+```
+5. Run the image
+```
+docker run -p 3000:3000 image_name:latest
 ```
 ## Services
 ### Request
 
 This API only has an endpoint (for now)
-`http://{HOST}/recipes/?i={ingredient_1},{ingredient_2}`
+`http://{HOST}/recipes?i={ingredient_1},{ingredient_2}`
 
 Example:
-
-`http://127.0.0.1/recipes/?i=onion,tomato`
+`http://localhost/recipes?i=onions,tomato`
 
 #### Reply
 ```
 {
-	"keywords": ["onion", "tomato"],
-	"recipes": [{
-		"title": "Greek Omelet with Feta",
-		"ingredients": ["eggs", "feta cheese", "garlic", "red onions", "spinach", "tomato", "water"],
-		"link": "http://www.kraftfoods.com/kf/recipes/greek-omelet-feta-104508.aspx",
-		"gif": "https://media.giphy.com/media/xBRhcST67lI2c/giphy.gif"
-	   },{
-		"title": "Guacamole Dip Recipe",
-		"ingredients": ["avocado", "onions", "tomato"],
-		"link":"http://cookeatshare.com/recipes/guacamole-dip-2783",
-		"gif":"https://media.giphy.com/media/I3eVhMpz8hns4/giphy.gif"
-	   }
-	]
+    "keywords": [
+        "onions",
+        "tomato"
+    ],
+    "recipes": [
+        {
+            "title": "ali's amazing bruschetta",
+            "ingredients": [
+                "olive oil",
+                "onions",
+                "parmesan cheese",
+                "tomato"
+            ],
+            "link": "http://allrecipes.com/Recipe/Alis-Amazing-Bruschetta/Detail.aspx",
+            "gif": "https://giphy.com/gifs/spotify-wow-rob-riggle-sarah-tiana-UQsAGZAkai8xsQxCmu"
+        },
+        {
+            "title": "basic guacamole dip",
+            "ingredients": [
+                "avocado",
+                "lemon juice",
+                "onions",
+                "tomato"
+            ],
+            "link": "http://allrecipes.com/Recipe/Basic-Guacamole-Dip/Detail.aspx",
+            "gif": "https://giphy.com/gifs/guacamole-I3eVhMpz8hns4"
+        }
+    ]
 }
 ```
 
