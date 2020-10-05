@@ -15,7 +15,7 @@ const {orderRecipes} = require('../utils/OrderRecipes')
            {
                const gif = await giphyApi.gifSearch(recipe.title)
                response.recipes.push({
-                   title: recipe.title.trim().charAt(0).toUpperCase(),
+                   title: recipe.title.trim().toLowerCase(),
                    ingredients: recipe.ingredients.split(', ').sort(),
                    link: recipe.href,
                    gif:gif

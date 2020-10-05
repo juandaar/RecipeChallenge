@@ -1,5 +1,5 @@
-
 const service = require('../services/RecipeServices')
+const {ErrorHandler, dependencyType} = require('../utils/ErrorHandler')
 module.exports={
     async getRecipes(req,res)
     {
@@ -11,7 +11,13 @@ module.exports={
         }
         catch(error)
         {
-            return res.status(411).json(error)
+            if(error instanceof ErrorHandler)
+            { 
+                    console.log(error.message);
+                    return res.status(error.code).json(error.message)
+            }
+
+            res.status(422).json(error);
         }
     
     }

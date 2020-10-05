@@ -15,7 +15,7 @@ const gifSearch= async(recipe) =>{
         console.error(error.response)
         const message="Giphy is unavailable in this moment, please try later"
         const dependency="Giphy API"
-        throw new ErrorHandler(dependencyType.external,dependency,message)
+        throw new ErrorHandler(502,dependencyType.external,dependency,message)
     }
 
 }

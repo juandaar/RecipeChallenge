@@ -7,11 +7,15 @@ const dependencyType={
 
 class ErrorHandler extends Error 
 {
-    constructor(type,dependency,message) {
+    constructor(code,type,dependency,message) {
         super(message);
-        this.type=type;
-        this.dependency=dependency;
-        this.msg=message;
+        this.code=code
+        this.message={
+            type:type,
+            dependency:dependency,
+            msg:message,
+        }
+
     }
 
 }
