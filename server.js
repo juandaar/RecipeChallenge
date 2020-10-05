@@ -1,15 +1,12 @@
 require('dotenv').config()
-const express = require('express')
-const app = express()
-const cors = require('cors')
-const {serverConf}=require("./conf/Configuration")
-app.use(cors())
-app.use(express.json())
-
-// routes
-app.use('/', require('./routes'))
+const http=require('http')
+const {serverConf}=require('./conf/Configuration')
+const app = require("./app")
+const server = http.createServer(app)
 
 //  server
-app.listen(serverConf.port || 3000, () => {
+server.listen(serverConf.port || 3000, () => {
   console.log(`Server is starting on port ${serverConf.port}`)
 })
+
+module.exports=server

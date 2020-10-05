@@ -14,6 +14,4 @@ const compare = ( a, b ) =>{
       array.sort(compare)
   }
   
-module.exports={
-    orderRecipes
-}
+module.exports=orderRecipes

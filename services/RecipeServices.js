@@ -1,6 +1,6 @@
 const puppyApi = require('../externals/PuppyApi')
 const giphyApi = require('../externals/GiphyApi')
-const {orderRecipes} = require('../utils/OrderRecipes')
+const orderRecipes = require('../utils/OrderRecipes')
 
    const getRecipes = async(ingredients) => 
    {

@@ -34,7 +34,7 @@ Recipe Challenge was implemented on npm version **6.14.6** and node version **v1
 ```
 2. Enter in the project folder
 ```
-cd RecipeChallenge or cd \ABSOLUTE_ROUTE
+cd RecipeChallenge or cd ABSOLUTE_ROUTE
 ```
 3. Install the dependencies by npm
 ```
@@ -52,7 +52,7 @@ git clone https://github.com/juandaar/RecipeChallenge.git
 ```
 2. Enter in the project folder
 ```
-cd RecipeChallenge or cd \ABSOLUTE_ROUTE
+cd RecipeChallenge or cd ABSOLUTE_ROUTE
 ```
 3. Create the image
 ```
@@ -90,6 +90,42 @@ Example:
 	]
 }
 ```
+
+## Testing
+you should be in the proyect folder:
+```
+npm test
+```
+### Expected response
+```
+   /recipes?i=ingredient - 200
+    √ GET onion recipes 
+
+  /recipes?i=1,2,3 - 200
+    √ GET recipes with onions, carrots and tomatoes as ingredients 
+
+  /recipes -422
+    √ HTTP CODE 422 for not sending ingredients
+
+  /recipes?i=1,2,3,4 -422
+    √ HTTP CODE 422 for sending more than 3 ingredients
+
+  /pizza -422
+    √ HTTP CODE 404
+
+  orderRecipes function
+    √ Return the recipes list in alphabetical order
+
+  Search Giphy
+    √ Search giphy return a URL 
+
+  recipeSearch puppyApi
+    √ GET recipes by ingredients from puppy API 
+
+
+  8 passing 
+```
+
 
 
 
