@@ -1,4 +1,4 @@
-#Recipe Challenge
+# Recipe Challenge
 The Recipe Challenge is an application made in NodeJS to return a list of recipes from some ingredients.
 
 ## Summary 
@@ -6,7 +6,8 @@ The Recipe challenge management an integration with two externals APIS: [Recipe 
 
 ## Prerequisite
 [Node.js](https://nodejs.org/pt-br/download/)
-[GIT] (https://git-scm.com/downloads)
+
+[GIT](https://git-scm.com/downloads)
 
 ## Installation
 ### Environment Variables
