@@ -20,9 +20,9 @@ const validPage = () => {
 
 const validPageWithThreeIngredients = () => {
   describe('/recipes?i=1,2,3 - 200', () => {
-    it('GET recipes with onions, carrots and tomatoes as ingredients', (done) => {
+    it('GET recipes with onions, carrot and tomato as ingredients', (done) => {
       chai.request(server)
-        .get('/recipes/?i=onions,carrots,tomatoes')
+        .get('/recipes/?i=onions,carrot,tomato')
         .end((err, res) => {
           res.should.have.status(200);
           done();
