@@ -1,18 +1,18 @@
-const server = require('./server')
-const orderRecipesTest= require('./utils/OrderRecipes')
-const giphyTest= require('./integration/GiphyApi')
-const puppyTest=require('./integration/PuppyApi')
+const server = require('./server');
+const orderRecipesTest = require('./utils/OrderRecipes');
+const giphyTest = require('./integration/GiphyApi');
+const puppyTest = require('./integration/PuppyApi');
 
-//API
-server.validPage()
-server.validPageWithThreeIngredients()
-server.validPageWithoutIngredients()
-server.validPageManyIngredients()
-server.InvalidPage()
+// API
+server.validPage();
+server.validPageWithThreeIngredients();
+server.validPageWithoutIngredients();
+server.validPageManyIngredients();
+server.InvalidPage();
 
-//Utils
+// Utils
 orderRecipesTest.orderTest();
 
-//Integrations
+// Integrations
 giphyTest.searchTest();
 puppyTest.searchRecipeTest();

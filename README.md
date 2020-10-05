@@ -44,6 +44,10 @@ npm install
 ```
 npm start
 ```
+or
+```
+npm start-dev
+```
 
 ### Docker
 1. Clone the [repository](https://github.com/juandaar/RecipeChallenge)
