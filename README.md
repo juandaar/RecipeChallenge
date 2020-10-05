@@ -16,9 +16,9 @@ PUPPY_URL=http://www.recipepuppy.com/api/
 GIPHY_API_TOKEN=RDsg9MYu12IDx3HJiBTZAvSQc4qeeUYO*
 * you can create your Giphy API Key [here](https://developers.giphy.com/docs/api#quick-start-guide)
 
-##Services
-###Search Recipes
-###Request
+## Services
+### Search Recipes
+### Request
 This API only has and endpoint (for now)
 `http://{HOST}/recipes/?i={ingredient_1},{ingredient_2}`
 
