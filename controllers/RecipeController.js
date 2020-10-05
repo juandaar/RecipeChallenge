@@ -11,7 +11,7 @@ module.exports={
         }
         catch(error)
         {
-            return res.status(411).json(error.message)
+            return res.status(411).json(error)
         }
     
     }

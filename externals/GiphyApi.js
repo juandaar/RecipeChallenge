@@ -1,6 +1,6 @@
-const {giphyConf} = require('../../conf/Configuration')
+const {giphyConf} = require('../conf/Configuration')
 const giphy = require('giphy-api')(giphyConf.token);
-
+const {ErrorHandler,dependencyType}= require("../utils/ErrorHandler")
 
 const gifSearch= async(recipe) =>{
     try{
@@ -15,7 +15,7 @@ const gifSearch= async(recipe) =>{
         console.error(error.response)
         const message="Giphy is unavailable in this moment, please try later"
         const dependency="Giphy API"
-        return null;
+        throw new ErrorHandler(dependencyType.external,dependency,message)
     }
 
 }
