@@ -75,7 +75,7 @@ This API only has an endpoint (for now)
 `http://{HOST}/recipes?i={ingredient_1},{ingredient_2}`
 
 Example:
-`http://localhost/recipes?i=onions,tomato`
+`http://localhost:PORT/recipes?i=onions,tomato`
 
 #### Reply
 ```
