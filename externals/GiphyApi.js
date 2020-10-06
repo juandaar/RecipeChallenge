@@ -1,4 +1,5 @@
 const { giphyConf } = require('../conf/Configuration');
+// eslint-disable-next-line import/order
 const giphy = require('giphy-api')(giphyConf.token);
 const { ErrorHandler, dependencyType } = require('../utils/ErrorHandler');
 
