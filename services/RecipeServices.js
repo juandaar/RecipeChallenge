@@ -1,31 +1,29 @@
-const puppyApi = require('../externals/PuppyApi')
-const giphyApi = require('../externals/GiphyApi')
-const orderRecipes = require('../utils/OrderRecipes')
+const puppyApi = require('../externals/PuppyApi');
+const giphyApi = require('../externals/GiphyApi');
+const orderRecipes = require('../utils/OrderRecipes');
 
-   const getRecipes = async(ingredients) => 
-   {
-       const response={};
-       response.keywords=ingredients.sort()
-       response.recipes=[];
-       
-       const  recipes= await  puppyApi.recipeSearch(ingredients);
+const getRecipes = async (ingredients) => {
+  const response = {};
+  response.keywords = ingredients.sort();
+  response.recipes = [];
 
-       await Promise.all (
-           recipes.map(async (recipe) =>
-           {
-               const gif = await giphyApi.gifSearch(recipe.title)
-               response.recipes.push({
-                   title: recipe.title.trim().toLowerCase(),
-                   ingredients: recipe.ingredients.split(', ').sort(),
-                   link: recipe.href,
-                   gif:gif
-               })
-           })
-        )
-        orderRecipes(response.recipes)
-        return response
-   }
+  const recipes = await puppyApi.recipeSearch(ingredients);
 
-module.exports ={
-    getRecipes
-}
+  await Promise.all(
+    recipes.map(async (recipe) => {
+      const gif = await giphyApi.gifSearch(recipe.title);
+      response.recipes.push({
+        title: recipe.title.trim().toLowerCase(),
+        ingredients: recipe.ingredients.split(', ').sort(),
+        link: recipe.href,
+        gif,
+      });
+    }),
+  );
+  orderRecipes(response.recipes);
+  return response;
+};
+
+module.exports = {
+  getRecipes,
+};
