@@ -1,5 +1,5 @@
 module.exports = {
-    serverConf: {
+  serverConf: {
     port: process.env.APP_PORT || 3000,
   },
   giphyConf: {

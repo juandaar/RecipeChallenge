@@ -1,4 +1,4 @@
-From node:lts
+FROM node:lts
 
 RUN mkdir -p /container/app && chown -R node:node /container/app
 
