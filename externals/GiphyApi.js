@@ -12,7 +12,6 @@ const gifSearch = async (recipe) => {
     if (pagination.total_count === 0) return '';
     return data[0].url;
   } catch (error) {
-    console.error(error.response);
     const message = 'Giphy is unavailable in this moment, please try later';
     const dependency = 'Giphy API';
     throw new ErrorHandler(502, dependencyType.external, dependency, message);
